@@ -1,0 +1,47 @@
+[
+ {
+  "label": "F0=F1=F2 generic non-CM (model Hdg = 109; all Hodge sectors contain a 0)",
+  "planes": 256,
+  "planes_a": 64,
+  "rank": 109,
+  "rank_mod_p": [
+   109,
+   109
+  ],
+  "predicted": 109,
+  "sv_gap": [
+   7.999999999999994,
+   5.965603597237238e-14
+  ]
+ },
+ {
+  "label": "F0=F1 generic, F2 unrelated (model Hdg = 103; planes reach only sectors with a 0 via pair (0,1))",
+  "planes": 128,
+  "planes_a": 64,
+  "rank": 55,
+  "rank_mod_p": [
+   55,
+   55
+  ],
+  "predicted": 55,
+  "sv_gap": [
+   7.999999999999995,
+   1.7561147910166645e-14
+  ]
+ },
+ {
+  "label": "Fermat split form, CONTROL (model Hdg = 142; (a)+(b) planes reach only sectors with a 0)",
+  "planes": 448,
+  "planes_a": 64,
+  "rank": 118,
+  "rank_mod_p": [
+   118,
+   118
+  ],
+  "predicted": 118,
+  "sv_gap": [
+   15.999999999999993,
+   2.9587667359974644e-13
+  ]
+ }
+]

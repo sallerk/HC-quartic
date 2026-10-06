@@ -1,0 +1,395 @@
+{
+ "delsarte_FF": {
+  "model": {
+   "hodge": 20,
+   "prim": 19,
+   "hmm_prim": 19
+  },
+  "delsarte": {
+   "hodge": 20,
+   "prim": 19,
+   "hmm_prim": 19,
+   "dimJ": 81,
+   "D": 4
+  },
+  "produced": 20,
+  "agree": true
+ },
+ "delsarte_FJ": {
+  "model": {
+   "hodge": 18,
+   "prim": 17,
+   "hmm_prim": 19
+  },
+  "delsarte": {
+   "hodge": 18,
+   "prim": 17,
+   "hmm_prim": 19,
+   "dimJ": 81,
+   "D": 12
+  },
+  "produced": 18,
+  "agree": true
+ },
+ "delsarte_JJ": {
+  "model": {
+   "hodge": 20,
+   "prim": 19,
+   "hmm_prim": 19
+  },
+  "delsarte": {
+   "hodge": 20,
+   "prim": 19,
+   "hmm_prim": 19,
+   "dimJ": 81,
+   "D": 12
+  },
+  "produced": 20,
+  "agree": true
+ },
+ "delsarte_FFF": {
+  "model": {
+   "hodge": 142,
+   "prim": 141,
+   "hmm_prim": 141
+  },
+  "delsarte": {
+   "hodge": 142,
+   "prim": 141,
+   "hmm_prim": 141,
+   "dimJ": 729,
+   "D": 4
+  },
+  "produced": 142,
+  "agree": true
+ },
+ "delsarte_FFJ": {
+  "model": {
+   "hodge": 122,
+   "prim": 121,
+   "hmm_prim": 141
+  },
+  "delsarte": {
+   "hodge": 122,
+   "prim": 121,
+   "hmm_prim": 141,
+   "dimJ": 729,
+   "D": 12
+  },
+  "produced": 122,
+  "agree": true
+ },
+ "delsarte_FJJ": {
+  "model": {
+   "hodge": 114,
+   "prim": 113,
+   "hmm_prim": 141
+  },
+  "delsarte": {
+   "hodge": 114,
+   "prim": 113,
+   "hmm_prim": 141,
+   "dimJ": 729,
+   "D": 12
+  },
+  "produced": 114,
+  "agree": true
+ },
+ "delsarte_JJJ": {
+  "model": {
+   "hodge": 118,
+   "prim": 117,
+   "hmm_prim": 141
+  },
+  "delsarte": {
+   "hodge": 118,
+   "prim": 117,
+   "hmm_prim": 141,
+   "dimJ": 729,
+   "D": 12
+  },
+  "produced": 118,
+  "agree": true
+ },
+ "delsarte_FFFF": {
+  "model": {
+   "hodge": 1108,
+   "prim": 1107,
+   "hmm_prim": 1107
+  },
+  "delsarte": {
+   "hodge": 1108,
+   "prim": 1107,
+   "hmm_prim": 1107,
+   "dimJ": 6561,
+   "D": 4
+  },
+  "produced": 1108,
+  "agree": true
+ },
+ "delsarte_FFFJ": {
+  "model": {
+   "hodge": 928,
+   "prim": 927,
+   "hmm_prim": 1107
+  },
+  "delsarte": {
+   "hodge": 928,
+   "prim": 927,
+   "hmm_prim": 1107,
+   "dimJ": 6561,
+   "D": 12
+  },
+  "produced": 928,
+  "agree": true
+ },
+ "delsarte_FFJJ": {
+  "model": {
+   "hodge": 826,
+   "prim": 825,
+   "hmm_prim": 1107
+  },
+  "delsarte": {
+   "hodge": 826,
+   "prim": 825,
+   "hmm_prim": 1107,
+   "dimJ": 6561,
+   "D": 12
+  },
+  "produced": 826,
+  "agree": true
+ },
+ "delsarte_FJJJ": {
+  "model": {
+   "hodge": 784,
+   "prim": 783,
+   "hmm_prim": 1107
+  },
+  "delsarte": {
+   "hodge": 784,
+   "prim": 783,
+   "hmm_prim": 1107,
+   "dimJ": 6561,
+   "D": 12
+  },
+  "produced": 784,
+  "agree": true
+ },
+ "delsarte_JJJJ": {
+  "model": {
+   "hodge": 820,
+   "prim": 819,
+   "hmm_prim": 1107
+  },
+  "delsarte": {
+   "hodge": 820,
+   "prim": 819,
+   "hmm_prim": 1107,
+   "dimJ": 6561,
+   "D": 12
+  },
+  "produced": 820,
+  "agree": true
+ },
+ "fermat_m1": {
+  "shioda": {
+   "hodge": 20,
+   "prim": 19,
+   "hmm_prim": 19
+  },
+  "model": {
+   "hodge": 20,
+   "prim": 19,
+   "hmm_prim": 19
+  }
+ },
+ "fermat_m2": {
+  "shioda": {
+   "hodge": 142,
+   "prim": 141,
+   "hmm_prim": 141
+  },
+  "model": {
+   "hodge": 142,
+   "prim": 141,
+   "hmm_prim": 141
+  }
+ },
+ "fermat_m3": {
+  "shioda": {
+   "hodge": 1108,
+   "prim": 1107,
+   "hmm_prim": 1107
+  },
+  "model": {
+   "hodge": 1108,
+   "prim": 1107,
+   "hmm_prim": 1107
+  }
+ },
+ "cfg_generic m=1": {
+  "model": {
+   "hodge": 18,
+   "prim": 17,
+   "hmm_prim": 19
+  },
+  "produced": 18,
+  "note": "rho=18 (Shioda 1981 (5.11), r=8)",
+  "nonjoin_sectors": {}
+ },
+ "cfg_P=Q non-CM m=1": {
+  "model": {
+   "hodge": 19,
+   "prim": 18,
+   "hmm_prim": 19
+  },
+  "produced": "19",
+  "note": "rho=19 (Mizukami, via Shioda 1981 Rem 5.3)",
+  "nonjoin_sectors": {
+   "(2, 2)": 1
+  }
+ },
+ "cfg_E_i + generic m=1": {
+  "model": {
+   "hodge": 18,
+   "prim": 17,
+   "hmm_prim": 19
+  },
+  "produced": 18,
+  "note": "rho=18",
+  "nonjoin_sectors": {}
+ },
+ "cfg_CM sqrt-2 twice m=1": {
+  "model": {
+   "hodge": 20,
+   "prim": 19,
+   "hmm_prim": 19
+  },
+  "produced": 20,
+  "note": "rho=20 (singular K3)",
+  "nonjoin_sectors": {
+   "(2, 2)": 2
+  }
+ },
+ "cfg_generic m=2": {
+  "model": {
+   "hodge": 100,
+   "prim": 99,
+   "hmm_prim": 141
+  },
+  "produced": 100,
+  "note": "R(4,2)+1 = 100",
+  "nonjoin_sectors": {}
+ },
+ "cfg_generic m=3": {
+  "model": {
+   "hodge": 610,
+   "prim": 609,
+   "hmm_prim": 1107
+  },
+  "produced": 610,
+  "note": "R(4,3)+1 = 610",
+  "nonjoin_sectors": {}
+ },
+ "cfg_generic m=4": {
+  "model": {
+   "hodge": 3844,
+   "prim": 3843,
+   "hmm_prim": 8953
+  },
+  "produced": 3844,
+  "note": "R(4,4)+1 = 3844",
+  "nonjoin_sectors": {}
+ },
+ "cfg_F0=F1 non-CM, F2 gen m=2": {
+  "model": {
+   "hodge": 103,
+   "prim": 102,
+   "hmm_prim": 141
+  },
+  "produced": "103",
+  "note": "",
+  "nonjoin_sectors": {}
+ },
+ "cfg_F0=F1=F2 non-CM m=2": {
+  "model": {
+   "hodge": 109,
+   "prim": 108,
+   "hmm_prim": 141
+  },
+  "produced": "109",
+  "note": "",
+  "nonjoin_sectors": {}
+ },
+ "cfg_E_i, gen, gen m=2": {
+  "model": {
+   "hodge": 108,
+   "prim": 107,
+   "hmm_prim": 141
+  },
+  "produced": 108,
+  "note": "extra (2,1,1),(2,3,3) non-join classes",
+  "nonjoin_sectors": {
+   "(2, 1, 1)": 4,
+   "(2, 3, 3)": 4
+  }
+ },
+ "cfg_F0=..=F3 non-CM m=3": {
+  "model": {
+   "hodge": 714,
+   "prim": 713,
+   "hmm_prim": 1107
+  },
+  "produced": "714",
+  "note": "SL_2 invariants with Catalan 2",
+  "nonjoin_sectors": {
+   "(1, 2, 2, 3)": 4,
+   "(1, 2, 3, 2)": 4,
+   "(1, 3, 2, 2)": 4,
+   "(2, 1, 2, 3)": 4,
+   "(2, 1, 3, 2)": 4,
+   "(2, 2, 1, 3)": 4,
+   "(2, 2, 2, 2)": 2,
+   "(2, 2, 3, 1)": 4,
+   "(2, 3, 1, 2)": 4,
+   "(2, 3, 2, 1)": 4,
+   "(3, 1, 2, 2)": 4,
+   "(3, 2, 1, 2)": 4,
+   "(3, 2, 2, 1)": 4
+  }
+ },
+ "cfg_E_i x4 (Fermat 6-fold) m=3": {
+  "model": {
+   "hodge": 1108,
+   "prim": 1107,
+   "hmm_prim": 1107
+  },
+  "produced": 1108,
+  "note": "",
+  "nonjoin_sectors": {
+   "(1, 2, 2, 3)": 8,
+   "(1, 2, 3, 2)": 8,
+   "(1, 3, 2, 2)": 8,
+   "(2, 1, 2, 3)": 8,
+   "(2, 1, 3, 2)": 8,
+   "(2, 2, 1, 3)": 8,
+   "(2, 2, 2, 2)": 6,
+   "(2, 2, 3, 1)": 8,
+   "(2, 3, 1, 2)": 8,
+   "(2, 3, 2, 1)": 8,
+   "(3, 1, 2, 2)": 8,
+   "(3, 2, 1, 2)": 8,
+   "(3, 2, 2, 1)": 8
+  }
+ },
+ "cfg_sqrt-2 CM x3 m=2": {
+  "model": {
+   "hodge": 118,
+   "prim": 117,
+   "hmm_prim": 141
+  },
+  "produced": 118,
+  "note": "",
+  "nonjoin_sectors": {}
+ }
+}

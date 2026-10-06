@@ -1,0 +1,23 @@
+{
+ "d4_pairs": 144,
+ "d4_EF_divides": 144,
+ "d4_Q_twist_of_Ei2": 144,
+ "d4_ctrl_Ew2_match": 22,
+ "d4_ctrl_nonCM2_match": 18,
+ "d4_Nmin_hist": {
+  "1": 52,
+  "4": 31,
+  "12": 18,
+  "8": 17,
+  "2": 17,
+  "6": 6,
+  "3": 3
+ },
+ "d3_pairs": 68,
+ "d3_twist_of_Ew": 68,
+ "d3_ctrl_Ei_match": 11,
+ "note": "ctrl matches for E_w^2 are expected exactly when p = 3 mod 4 AND p = 2 mod 3 (both supersingular: all Weil numbers are sqrt(p)*roots of unity); count them separately below",
+ "d4_ctrl_Ew2_expected_supersingular_pairs": 22
+}
+d4 failures: []
+d3 failures: []

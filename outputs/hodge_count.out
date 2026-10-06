@@ -1,0 +1,35 @@
+(1) MODEL (elliptic-curve Hodge-group invariants) vs DELSARTE character count (independent)
+   FF    m=1  model Hdg=20    delsarte Hdg=20    produced=20     h^{m,m}_prim model/jac=19/19  dimJ(all degrees)=81  AGREE
+   FJ    m=1  model Hdg=18    delsarte Hdg=18    produced=18     h^{m,m}_prim model/jac=19/19  dimJ(all degrees)=81  AGREE
+   JJ    m=1  model Hdg=20    delsarte Hdg=20    produced=20     h^{m,m}_prim model/jac=19/19  dimJ(all degrees)=81  AGREE
+   FFF   m=2  model Hdg=142   delsarte Hdg=142   produced=142    h^{m,m}_prim model/jac=141/141  dimJ(all degrees)=729  AGREE
+   FFJ   m=2  model Hdg=122   delsarte Hdg=122   produced=122    h^{m,m}_prim model/jac=141/141  dimJ(all degrees)=729  AGREE
+   FJJ   m=2  model Hdg=114   delsarte Hdg=114   produced=114    h^{m,m}_prim model/jac=141/141  dimJ(all degrees)=729  AGREE
+   JJJ   m=2  model Hdg=118   delsarte Hdg=118   produced=118    h^{m,m}_prim model/jac=141/141  dimJ(all degrees)=729  AGREE
+   FFFF  m=3  model Hdg=1108  delsarte Hdg=1108  produced=1108   h^{m,m}_prim model/jac=1107/1107  dimJ(all degrees)=6561  AGREE
+   FFFJ  m=3  model Hdg=928   delsarte Hdg=928   produced=928    h^{m,m}_prim model/jac=1107/1107  dimJ(all degrees)=6561  AGREE
+   FFJJ  m=3  model Hdg=826   delsarte Hdg=826   produced=826    h^{m,m}_prim model/jac=1107/1107  dimJ(all degrees)=6561  AGREE
+   FJJJ  m=3  model Hdg=784   delsarte Hdg=784   produced=784    h^{m,m}_prim model/jac=1107/1107  dimJ(all degrees)=6561  AGREE
+   JJJJ  m=3  model Hdg=820   delsarte Hdg=820   produced=820    h^{m,m}_prim model/jac=1107/1107  dimJ(all degrees)=6561  AGREE
+(2) Fermat quartic X^{2m}_4 via Shioda criterion (all variables Fermat) vs model FF..F
+   m=1  Shioda Hdg=20 (h^{m,m}_prim=19)   model Hdg=20
+   m=2  Shioda Hdg=142 (h^{m,m}_prim=141)   model Hdg=142
+   m=3  Shioda Hdg=1108 (h^{m,m}_prim=1107)   model Hdg=1108
+(3) other configurations (model; produced-classes rank; controls)
+   generic m=1                  Hdg=18     produced=18     h^{m,m}_prim=19      rho=18 (Shioda 1981 (5.11), r=8); unpaired-sector classes=0
+   P=Q non-CM m=1               Hdg=19     produced=19     h^{m,m}_prim=19      rho=19 (Mizukami, via Shioda 1981 Rem 5.3); unpaired-sector classes=0
+   E_i + generic m=1            Hdg=18     produced=18     h^{m,m}_prim=19      rho=18; unpaired-sector classes=0
+   CM sqrt-2 twice m=1          Hdg=20     produced=20     h^{m,m}_prim=19      rho=20 (singular K3); unpaired-sector classes=0
+   generic m=2                  Hdg=100    produced=100    h^{m,m}_prim=141     R(4,2)+1 = 100; unpaired-sector classes=0
+   generic m=3                  Hdg=610    produced=610    h^{m,m}_prim=1107    R(4,3)+1 = 610; unpaired-sector classes=0
+   generic m=4                  Hdg=3844   produced=3844   h^{m,m}_prim=8953    R(4,4)+1 = 3844; unpaired-sector classes=0
+   F0=F1 non-CM, F2 gen m=2     Hdg=103    produced=103    h^{m,m}_prim=141     unpaired-sector classes=0
+   F0=F1=F2 non-CM m=2          Hdg=109    produced=109    h^{m,m}_prim=141     unpaired-sector classes=0
+   E_i, gen, gen m=2            Hdg=108    produced=108    h^{m,m}_prim=141     extra (2,1,1),(2,3,3) non-join classes; unpaired-sector classes=8
+   F0=..=F3 non-CM m=3          Hdg=714    produced=714    h^{m,m}_prim=1107    SL_2 invariants with Catalan 2; unpaired-sector classes=0
+   E_i x4 (Fermat 6-fold) m=3   Hdg=1108   produced=1108   h^{m,m}_prim=1107    unpaired-sector classes=0
+   sqrt-2 CM x3 m=2             Hdg=118    produced=118    h^{m,m}_prim=141     unpaired-sector classes=0
+(4) h^{m,m}_prim from sectors vs known: quartic surface 19 (h^{1,1}=20), quartic 4-fold 141 (h^{2,2}=142)
+   m=1  h^{m,m}_prim (sector count) = 19
+   m=2  h^{m,m}_prim (sector count) = 141
+   m=3  h^{m,m}_prim (sector count) = 1107

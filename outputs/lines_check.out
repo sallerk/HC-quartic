@@ -1,0 +1,8 @@
+P=Q generic (F = u^4 + 7/3 u^2v^2 + v^4): predicted rho = 19
+   join lines 16, graph lines 16, rank<H,lines> = 19 (sv gap 2.00e+00 / 1.28e-15)
+F0, F1 unrelated: predicted rho = 18, lines give 1 + 9 = 10
+   join lines 16, graph lines 0, rank<H,lines> = 10 (sv gap 4.00e+00 / 1.08e-15)
+Fermat u^4+v^4 = z^4+w^4: predicted rho = 20
+   join lines 16, graph lines 32, rank<H,lines> = 20 (sv gap 4.00e+00 / 2.11e-15)
+P=Q with j=0 (u^4+uv^3): predicted rho = 20
+   join lines 16, graph lines 48, rank<H,lines> = 20 (sv gap 6.00e+00 / 2.55e-15)
