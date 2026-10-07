@@ -1,7 +1,7 @@
 # HC-quartic
 
-Code and data supporting the note *The Hodge conjecture for hypersurfaces F_0(u_0,v_0) + … + F_m(u_m,v_m) = 0 of
-degree four* (Kevin Saller, 2026), DOI [10.5281/zenodo.23222395](https://doi.org/10.5281/zenodo.23222395).
+Code and data supporting the note *The Hodge conjecture for sums of binary quartics* (Kevin Saller, 2026), DOI
+[10.5281/zenodo.23222395](https://doi.org/10.5281/zenodo.23222395).
 
 **Result.** The Hodge conjecture holds for every smooth hypersurface F_0(u_0,v_0) + … + F_m(u_m,v_m) = 0 in
 P^(2m+1), where the F_s are binary quartics with distinct roots. This covers every dimension 2m.

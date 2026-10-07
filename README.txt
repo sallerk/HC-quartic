@@ -1,6 +1,6 @@
 Supporting code and data for the note
-"The Hodge conjecture for hypersurfaces F_0(u_0,v_0) + ... + F_m(u_m,v_m) = 0 of degree four"
-==================================================================================================
+"The Hodge conjecture for sums of binary quartics"
+==================================================
 
 Status: draft accompanying a draft note; not peer reviewed.
 
