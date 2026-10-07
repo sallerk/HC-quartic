@@ -1,6 +1,7 @@
 # jac_control.py -- negative control for jac_check.py: the test "L_P^(N) == (L_E^(N))^2 for some N | 24"
 # must FAIL when E_i is replaced by an elliptic curve E' that is not geometrically isogenous to E_i
-# (checked at primes p = 1 mod 4 where E' is ordinary).  Also: the quotient L_C / L_{E_F} must FAIL to be
+# (checked at primes p = 1 mod 4 where E' has good ordinary reduction; E': y^2 = x^3 + x + 3 has discriminant
+# -16*247 = -16*13*19, so p = 13 is skipped).  Also: the quotient L_C / L_{E_F} must FAIL to be
 # divisible when E_F is replaced by a wrong curve (here: E_F of a different random form).
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # find jac_check.py next to this file
@@ -16,6 +17,10 @@ G = [1, 4, -1, 0, 2]          # another one, for the wrong-E_F control
 for p in [13, 17, 29, 37, 41]:
     if not (disc_nonzero_mod(F, p) and disc_nonzero_mod(G, p)):
         continue
+    if (4 * 1 ** 3 + 27 * 3 ** 2) % p == 0:
+        lines.append("skip p=%d (bad reduction of E': 4A^3 + 27B^2 = 247 = 13*19)" % p); continue
+    if a_curve(p, 1, 3) % p == 0:
+        lines.append("skip p=%d (E' is supersingular)" % p); continue
     Ns = [count_curve(F, p, k, 4)[0] for k in (1, 2, 3)]
     LC = Lpoly_from_counts(Ns, p, 3)
     aE = p + 1 - count_curve(F, p, 1, 4)[1]

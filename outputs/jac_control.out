@@ -1,4 +1,4 @@
-p=13  a(E_i)=6 a(E')=-1 (disc -51)  E_i^2 match N=[1, 2, 3, 4, 6, 8, 12, 24]   E'^2 match N=[]   L_C divisible by wrong L_{E_G}: False
+skip p=13 (bad reduction of E': 4A^3 + 27B^2 = 247 = 13*19)
 p=17  a(E_i)=2 a(E')=1 (disc -67)  E_i^2 match N=[3, 6, 12, 24]   E'^2 match N=[]   L_C divisible by wrong L_{E_G}: False
 p=29  a(E_i)=-10 a(E')=-6 (disc -80)  E_i^2 match N=[2, 4, 6, 8, 12, 24]   E'^2 match N=[]   L_C divisible by wrong L_{E_G}: False
 p=37  a(E_i)=-2 a(E')=-1 (disc -147)  E_i^2 match N=[6, 12, 24]   E'^2 match N=[]   L_C divisible by wrong L_{E_G}: False

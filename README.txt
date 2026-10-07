@@ -111,12 +111,15 @@ code/jac_check.py  ->  outputs/jac_check.out, outputs/jac_check.json
 
 code/jac_control.py  ->  outputs/jac_control.out
   Negative control for jac_check.py, for the random quartic F = [3,-2,5,1,7] at
-  p in {13,17,29,37,41}: (i) the same test with E_i replaced by y^2 = x^3 + x + 3 (j = 6912/247,
+  p in {17,29,37,41}: (i) the same test with E_i replaced by y^2 = x^3 + x + 3 (j = 6912/247,
   not an integer, so no CM) must fail; (ii) divisibility of L_{C_F} by L_{E_G} for the unrelated
-  form G = [1,4,-1,0,2] should fail.
-  Expected: "E_i^2 match" non-empty and "E'^2 match N=[]" at all five primes; divisibility by the
-  wrong factor is False except at p = 41, where a_p(E_F) = a_p(E_G) = -10, so the two
-  L-factors coincide and the divisibility is automatic (the script prints this explanation).
+  form G = [1,4,-1,0,2] should fail. The script also lists p = 13 and skips it: y^2 = x^3 + x + 3
+  has discriminant -16*247 = -16*13*19, so it has bad reduction there. (An earlier version
+  printed a meaningless row for p = 13; the note uses only 17, 29, 37 and 41.)
+  Expected: a "skip p=13" line, then "E_i^2 match" non-empty and "E'^2 match N=[]" at the four
+  primes 17, 29, 37, 41; divisibility by the wrong factor is False except at p = 41, where
+  a_p(E_F) = a_p(E_G) = -10, so the two L-factors coincide and the divisibility is automatic (the
+  script prints this explanation).
 
 code/s3_jac_check.py  ->  outputs/s3_jac_check.json, outputs/s3_jac_check.out
   Supports: Section 4, as a second, independently written check (own finite-field arithmetic,
