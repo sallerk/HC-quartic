@@ -1,4 +1,4 @@
-# HC-split-quartic
+# HC-quartic
 
 Code and data supporting the note *The Hodge conjecture for hypersurfaces F_0(u_0,v_0) + … + F_m(u_m,v_m) = 0 of
 degree four* (Kevin Saller, 2026).
