@@ -40,8 +40,8 @@ s3_jac_check.py 4 s, the others about 1 s each.
 2. How to run
 -------------
 Each script writes its result files (.out, and for most also .json) into the CURRENT working
-directory. The reference results are in outputs/. To reproduce them, from this folder
-(split-quartic/):
+directory. The reference results are in outputs/. To reproduce them, from the top folder
+of this repository:
 
     mkdir rerun
     cd rerun
