@@ -1,0 +1,111 @@
+{
+ "FF": {
+  "hodge": 20,
+  "hmm_prim": 19,
+  "dim_prim": 21,
+  "delsarte": 20,
+  "agree": true
+ },
+ "FJ": {
+  "hodge": 18,
+  "hmm_prim": 19,
+  "dim_prim": 21,
+  "delsarte": 18,
+  "agree": true
+ },
+ "JJ": {
+  "hodge": 20,
+  "hmm_prim": 19,
+  "dim_prim": 21,
+  "delsarte": 20,
+  "agree": true
+ },
+ "FFF": {
+  "hodge": 142,
+  "hmm_prim": 141,
+  "dim_prim": 183,
+  "delsarte": 142,
+  "agree": true
+ },
+ "FFJ": {
+  "hodge": 122,
+  "hmm_prim": 141,
+  "dim_prim": 183,
+  "delsarte": 122,
+  "agree": true
+ },
+ "FJJ": {
+  "hodge": 114,
+  "hmm_prim": 141,
+  "dim_prim": 183,
+  "delsarte": 114,
+  "agree": true
+ },
+ "JJJ": {
+  "hodge": 118,
+  "hmm_prim": 141,
+  "dim_prim": 183,
+  "delsarte": 118,
+  "agree": true
+ },
+ "FFFF": {
+  "hodge": 1108,
+  "hmm_prim": 1107,
+  "dim_prim": 1641,
+  "delsarte": 1108,
+  "agree": true
+ },
+ "FFFJ": {
+  "hodge": 928,
+  "hmm_prim": 1107,
+  "dim_prim": 1641,
+  "delsarte": 928,
+  "agree": true
+ },
+ "FFJJ": {
+  "hodge": 826,
+  "hmm_prim": 1107,
+  "dim_prim": 1641,
+  "delsarte": 826,
+  "agree": true
+ },
+ "FJJJ": {
+  "hodge": 784,
+  "hmm_prim": 1107,
+  "dim_prim": 1641,
+  "delsarte": 784,
+  "agree": true
+ },
+ "JJJJ": {
+  "hodge": 820,
+  "hmm_prim": 1107,
+  "dim_prim": 1641,
+  "delsarte": 820,
+  "agree": true
+ },
+ "GG": {
+  "hodge": 19,
+  "hmm_prim": 19,
+  "dim_prim": 21
+ },
+ "GH": {
+  "hodge": 18,
+  "hmm_prim": 19,
+  "dim_prim": 21
+ },
+ "GGG": {
+  "hodge": 109,
+  "hmm_prim": 141,
+  "dim_prim": 183
+ },
+ "GGH": {
+  "hodge": 103,
+  "hmm_prim": 141,
+  "dim_prim": 183
+ },
+ "GGGG": {
+  "hodge": 714,
+  "hmm_prim": 1107,
+  "dim_prim": 1641
+ }
+}

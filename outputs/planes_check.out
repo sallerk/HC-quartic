@@ -1,6 +1,6 @@
 F0=F1=F2 generic non-CM (model Hdg = 109; all Hodge sectors contain a 0)
-   planes 256 (point-joins 64), rank<h^2, planes> = 109 (exact mod p: [109, 109]), predicted 109, sv gap 8.00e+00 / 5.97e-14
+   planes 256 (point-joins 64), rank<h^2, planes> = 109 (exact mod p: [109, 109]; exact over Q: 109), predicted 109, sv gap 8.00e+00 / 5.97e-14
 F0=F1 generic, F2 unrelated (model Hdg = 103; planes reach only sectors with a 0 via pair (0,1))
-   planes 128 (point-joins 64), rank<h^2, planes> = 55 (exact mod p: [55, 55]), predicted 55, sv gap 8.00e+00 / 1.76e-14
+   planes 128 (point-joins 64), rank<h^2, planes> = 55 (exact mod p: [55, 55]; exact over Q: 55), predicted 55, sv gap 8.00e+00 / 1.76e-14
 Fermat split form, CONTROL (model Hdg = 142; (a)+(b) planes reach only sectors with a 0)
-   planes 448 (point-joins 64), rank<h^2, planes> = 118 (exact mod p: [118, 118]), predicted 118, sv gap 1.60e+01 / 2.96e-13
+   planes 448 (point-joins 64), rank<h^2, planes> = 118 (exact mod p: [118, 118]; exact over Q: 118), predicted 118, sv gap 1.60e+01 / 2.96e-13

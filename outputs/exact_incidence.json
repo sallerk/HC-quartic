@@ -1,0 +1,25 @@
+{
+ "lines on S": {
+  "count": 32,
+  "pairs_by_intersection_dim": {
+   "0": 336,
+   "1": 160
+  },
+  "float_disagreements": 0,
+  "smallest_sv_that_must_be_nonzero": 0.09927911684460432,
+  "largest_sv_that_must_be_zero": 1.6184142622847344e-16,
+  "gram_rank_exact_Q": 19
+ },
+ "planes on X(F,F,F)": {
+  "count": 256,
+  "pairs_by_intersection_dim": {
+   "0": 19584,
+   "1": 11136,
+   "2": 1920
+  },
+  "float_disagreements": 0,
+  "smallest_sv_that_must_be_nonzero": 0.0662163432635038,
+  "largest_sv_that_must_be_zero": 3.403089209629379e-16,
+  "gram_rank_exact_Q": 109
+ }
+}

@@ -7,11 +7,18 @@ Status: draft accompanying a draft note; not peer reviewed.
 What the note proves (Theorem A / Corollary B there): the Hodge conjecture holds for every smooth
 hypersurface X = {F_0(u_0,v_0) + ... + F_m(u_m,v_m) = 0} in P^(2m+1), F_s binary quartic forms with
 distinct roots, and more generally for products of such hypersurfaces (also with extra terms z_j^4)
-and curves whose Jacobians are isogenous to products of elliptic curves.
+and curves whose Jacobians are isogenous to products of elliptic curves. It also gives a formula
+for dim Hdg^m(X) (Proposition 6.1 there).
 
-IMPORTANT: the proof in the note does not use any of these computations. The scripts below are
-consistency checks of the ingredients (at finitely many primes / in finitely many cases) and
-illustrations in low dimension, where the Hodge conjecture was already known.
+IMPORTANT: the proofs of Theorem A and Proposition 6.1 in the note do not use any of these
+computations. The scripts below are consistency checks of the ingredients (at finitely many primes /
+in finitely many cases) and illustrations in low dimension, where the Hodge conjecture was already
+known. Statements of the note that do rest on computations are in Section 7: the values of
+dim Hdg^m(X) listed there (hodge_count.py, hodge_formula.py; also quoted in the introduction), and,
+under "Explicit cycles for m <= 2", that for F = u^4 + (7/3)u^2v^2 + v^4 the 32 lines on
+{F(u,v) = F(z,w)} together with h, and the 256 planes on X(F,F,F) together with h^2, span the
+Hodge classes. The latter rests on exact_incidence.py (exact intersection pattern, exact rank over
+Q) and Proposition 6.1.
 
 Licence: the code in code/ is under the MIT licence; the data in outputs/ and this text are under
 CC BY 4.0 (see the LICENSE files of the repository). No third-party files are included.
@@ -19,14 +26,15 @@ CC BY 4.0 (see the LICENSE files of the repository). No third-party files are in
 
 1. Requirements
 ---------------
-Python 3 with numpy, sympy and mpmath. Tested with Python 3.12.9, numpy 2.1.3, sympy 1.13.1,
-mpmath 1.3.0. No Sage, no docker, no GPU. The scripts do not parallelize themselves, but numpy's
-linear algebra may start several threads; planes_check.py sets the BLAS/OpenMP thread variables to 1
-itself, and for the other scripts one can set OMP_NUM_THREADS=1, OPENBLAS_NUM_THREADS=1 and
-MKL_NUM_THREADS=1 in the environment (this was done for the runtimes below).
-Runtimes measured on a desktop PC, with up to four scripts running at the same time:
-jac_control.py 96 s, jac_check.py 38 s, s1_map_check.py 9 s, planes_check.py 6 s,
-s3_jac_check.py 5 s, the others about 1 s each.
+Python 3 with numpy, sympy, mpmath and python-flint (python-flint only for lines_check.py,
+planes_check.py and exact_incidence.py). Tested with Python 3.12.9, numpy 2.1.3, sympy 1.13.1,
+mpmath 1.3.0, python-flint 0.9.0. No Sage, no docker, no GPU. The scripts do not parallelize
+themselves, but numpy's linear algebra may start several threads; planes_check.py sets the
+BLAS/OpenMP thread variables to 1 itself, and for the other scripts one can set OMP_NUM_THREADS=1,
+OPENBLAS_NUM_THREADS=1 and MKL_NUM_THREADS=1 in the environment (this was done for the runtimes
+below). Runtimes measured on a desktop PC, one script at a time:
+jac_control.py 91 s, jac_check.py 35 s, s1_map_check.py 9 s, planes_check.py 6 s,
+s3_jac_check.py 4 s, the others about 1 s each.
 
 
 2. How to run
@@ -46,17 +54,21 @@ directory. The reference results are in outputs/. To reproduce them, from this f
     python ../code/s3_jac_check.py
     python ../code/s3_ctrl_explain.py     (needs s3_jac_check.json from the previous line,
                                            so run it in the same folder, after s3_jac_check.py)
+    python ../code/hodge_formula.py
+    python ../code/exact_incidence.py
 
 and compare each produced file with the file of the same name in ../outputs/ (for example with
 "diff" or "fc"). jac_control.py imports jac_check.py and planes_check.py imports lines_check.py
-from code/; s3_ctrl_explain.py reuses the helper functions of s3_jac_check.py.
+from code/; s3_ctrl_explain.py reuses the helper functions of s3_jac_check.py; hodge_formula.py and
+exact_incidence.py import no other script.
 
-Reproducibility: in a fresh folder, all 14 files produced by the commands above were
-byte-for-byte identical to the files in outputs/ (Windows, Python 3.12.9, versions as above).
-On another platform the files may differ in line endings (the reference files have CRLF
-line endings); the floating-point singular values printed by lines_check.py and planes_check.py
-("sv gap ...") may differ in the last digits with other numpy/BLAS versions. All other content
-is exact integer, rational or modular arithmetic, or uses fixed random seeds.
+Reproducibility: in a fresh folder, all 18 files produced by the commands above were
+byte-for-byte identical to the files in outputs/ (rerun on 6 October 2026; Windows, Python 3.12.9,
+versions as above). On another platform the files may differ in line endings (the reference files
+have CRLF line endings); the floating-point singular values printed by lines_check.py,
+planes_check.py ("sv gap ...") and exact_incidence.py may differ in the last digits with other
+numpy/BLAS versions. All other content is exact integer, rational or modular arithmetic, or uses
+fixed random seeds.
 
 
 3. Files
@@ -124,17 +136,17 @@ code/s3_ctrl_explain.py  ->  outputs/s3_ctrl_explain.out
   E_i, E_w supersingular): True".
 
 code/hodge_count.py  ->  outputs/hodge_count.out, outputs/hodge_count.json
-  Supports: Section 6 of the note (dimensions of the space of Hodge classes for some special
-  members). Not used in the proof.
+  Supports: Section 7 of the note ("Hodge classes on some Delsarte members"), a check of
+  Proposition 6.1. Not used in any proof.
   Part (1): for the 12 block patterns built from F = u^4 + v^4 (E_F = E_i) and J = u^4 + uv^3
   (E_J = E_w) with m = 1, 2, 3, the hypersurface is of Delsarte type and dim Hdg^m(X) (including
   the power of the hyperplane class) is computed by the character method (Jacobian ring, diagonal
   group, Galois action; the script asserts that every character occurs with multiplicity one).
-  This is compared with a "model" count: the number of Hodge classes predicted by the decomposition
-  of H^{2m}(X) obtained by iterating the Shioda-Katsura construction together with
-  Jac(C_F) ~ E_F x E_i^2 and the description of the Hodge group of a product of elliptic curves
-  (Imai; see Gordon's survey). The model is only sketched in the code comments; it is a
-  consistency check, not a proved statement of the note.
+  This is compared with a "model" count: an earlier implementation of the count that is now
+  Proposition 6.1 of the note (iterating the Shioda-Katsura construction together with
+  Jac(C_F) ~ E_F x E_i^2 and the Hodge group of a product of elliptic curves, after Imai; see
+  Gordon's survey). The derivation is only sketched in the code comments; the proof is the one in
+  the note, and hodge_formula.py evaluates the formula as stated there.
   Expected: AGREE in all 12 lines, with dim Hdg^m = FF 20, FJ 18, JJ 20; FFF 142, FFJ 122,
   FJJ 114, JJJ 118; FFFF 1108, FFFJ 928, FFJJ 826, FJJJ 784, JJJJ 820.
   Part (2): Fermat quartic in dimension 2, 4, 6 by Shioda's criterion: 20, 142, 1108.
@@ -144,32 +156,64 @@ code/hodge_count.py  ->  outputs/hodge_count.out, outputs/hodge_count.json
   blocks; and h^{m,m}_prim = 19, 141, 1107 for quartics of dimension 2, 4, 6.
 
 code/lines_check.py  ->  outputs/lines_check.out, outputs/lines_check.json
-  Supports: Section 6 (explicit cycles for m = 1, where the Hodge conjecture is the Lefschetz
+  Supports: Section 7 (explicit cycles for m = 1, where the Hodge conjecture is the Lefschetz
   (1,1) theorem). Rank of the Gram matrix of the hyperplane class and explicit lines (join lines
   {u = a v, z = b w} and graph lines {(u,v) = A(z,w)}) on quartic surfaces F_0(u,v) = F_1(z,w);
-  the lines are computed numerically (mpmath, 40 digits) and checked to lie on the surface.
-  Expected: F_0 = F_1 = u^4 + (7/3)u^2v^2 + v^4 (no CM: j(E_F) = 61918288/1521 is not an
-  integer): 16 + 16 lines, rank 19; F_0 = u^4 + (7/3)u^2v^2 + v^4, F_1 = [2,-1,3,1,5]: 16 lines,
+  the lines are computed numerically (mpmath, 40 digits) and checked to lie on the surface. Which
+  lines meet is decided in floating point; the rank of the resulting integer Gram matrix is
+  computed numerically and exactly over Q (python-flint).
+  Expected (both ranks): F_0 = F_1 = u^4 + (7/3)u^2v^2 + v^4 (no CM: j(E_F) = 61918288/1521 is not
+  an integer): 16 + 16 lines, rank 19; F_0 = u^4 + (7/3)u^2v^2 + v^4, F_1 = [2,-1,3,1,5]: 16 lines,
   rank 10; Fermat quartic surface: 48 lines, rank 20; F_0 = F_1 = u^4 + uv^3: 64 lines, rank 20.
 
 code/planes_check.py  ->  outputs/planes_check.out, outputs/planes_check.json
-  Supports: Section 6 (explicit cycles for m = 2, where the Hodge conjecture was already known).
+  Supports: Section 7 (explicit cycles for m = 2, where the Hodge conjecture was already known).
   Planes on X = {F_0 + F_1 + F_2 = 0} in P^5 that are joins of three points or of a graph line
   with a point; Gram matrix of h^2 and the planes (P.P = 7, -2 for planes meeting in a line, 1 for
-  planes meeting in a point, 0 for disjoint planes, h^2.P = 1, h^2.h^2 = 4); rank numerically and
-  exactly modulo 1000003 and 998244353 (a lower bound for the rank over Q).
-  Expected: F_0 = F_1 = F_2 = u^4 + (7/3)u^2v^2 + v^4: 256 planes, rank 109 (both ways);
+  planes meeting in a point, 0 for disjoint planes, h^2.P = 1, h^2.h^2 = 4). Which planes meet,
+  and in what dimension, is decided from floating-point ranks of the spans; the rank of the Gram
+  matrix is computed numerically, exactly modulo 1000003 and 998244353, and exactly over Q
+  (python-flint).
+  Expected: F_0 = F_1 = F_2 = u^4 + (7/3)u^2v^2 + v^4: 256 planes, rank 109 (all four ways);
   F_0 = F_1 = u^4 + (7/3)u^2v^2 + v^4, F_2 = [2,-1,3,1,5]: 128 planes, rank 55; Fermat quartic
   fourfold: 448 planes, rank 118 (the Fermat fourfold has dim Hdg^2 = 142; the planes used here
   are only of the two join types above).
+
+code/hodge_formula.py  ->  outputs/hodge_formula.out, outputs/hodge_formula.json
+  Supports: Section 7 ("Hodge classes on some Delsarte members"). Evaluates the closed formula of
+  Proposition 6.1 for dim Hdg^m(X); written from the statement of the proposition, independently of
+  hodge_count.py. Compares it with the Delsarte counts of hodge_count.py part (1) (copied into the
+  script) for the 12 block patterns there, and prints the values for blocks without CM
+  (G = u^4 + (7/3)u^2v^2 + v^4, H a second curve without CM, not isogenous to E_G).
+  Expected: "agree" in all 12 lines, with the values listed under hodge_count.py; GG 19, GH 18,
+  GGG 109, GGH 103, GGGG 714; last line "ALL TWELVE AGREE".
+
+code/exact_incidence.py  ->  outputs/exact_incidence.out, outputs/exact_incidence.json
+  Supports: Section 7 ("Explicit cycles for m <= 2"), for F = u^4 + (7/3)u^2v^2 + v^4: the 32 lines
+  on S = {F(u,v) = F(z,w)} and the 256 planes on X(F,F,F) of lines_check.py / planes_check.py.
+  The linear spaces are sums of lines in the coordinate blocks C^2 and graphs of matrices A with
+  F o A = +-F, so the dimension of the intersection of two of them is determined by the roots of F
+  they contain, the permutations of the roots induced by the matrices, and dim ker(A - A'). These
+  data are computed exactly with SymPy (a quantity is declared zero only if its minimal polynomial
+  over Q is x); the resulting intersection pattern is compared, for all pairs, with floating-point
+  ranks of the spans; the Gram matrices are formed from the exact data and their rank is computed
+  exactly over Q (python-flint).
+  Expected: lines: pairs by dimension of the intersection {0: 336, 1: 160}, 0 disagreements,
+  rank 19; planes: {0: 19584, 1: 11136, 2: 1920}, 0 disagreements, rank 109.
+  With Proposition 6.1 (Picard number 19, dim Hdg^2(X(F,F,F)) = 109) this shows that the lines
+  and h span NS(S) (x) Q and that the planes and h^2 span Hdg^2(X(F,F,F)).
 
 
 4. What the checks do not show
 ------------------------------
 - Point counts at finitely many primes cannot prove an isogeny over C; the proof of
   Jac(C_F) ~ E_F x E_i^2 is the argument in Section 4 of the note.
-- The "model" counts in hodge_count.py rest on a heuristic description of the Hodge classes;
-  only the Delsarte character counts in its part (1)-(2) are computed by a standard independent
-  method.
-- The explicit cycles in lines_check.py / planes_check.py give lower bounds for the rank of the
-  space of algebraic classes in dimensions 2 and 4 only.
+- The "model" counts in hodge_count.py and the values of hodge_formula.py are evaluations of the
+  formula of Proposition 6.1, whose proof is in the note. They are compared with an independent
+  method (the Delsarte character counts of hodge_count.py, parts (1)-(2)) only for blocks
+  u^4 + v^4 and u^4 + uv^3, all with complex multiplication, and for m = 1 with the Picard numbers
+  from Shioda (1981) quoted in part (3).
+- Explicit cycles are computed in dimensions 2 and 4 only. For F = u^4 + (7/3)u^2v^2 + v^4 they
+  span the Hodge classes (exact_incidence.py with Proposition 6.1). In the other cases of
+  lines_check.py / planes_check.py they give lower bounds only, and which cycles meet is decided
+  there in floating point.

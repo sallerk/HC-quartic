@@ -4,6 +4,7 @@
   "join_lines": 16,
   "graph_lines": 16,
   "rank": 19,
+  "rank_exact_Q": 19,
   "smallest_nonzero_sv": 1.9999999999999996,
   "largest_zero_sv": 1.2757093192433933e-15
  },
@@ -12,6 +13,7 @@
   "join_lines": 16,
   "graph_lines": 0,
   "rank": 10,
+  "rank_exact_Q": 10,
   "smallest_nonzero_sv": 3.9999999999999982,
   "largest_zero_sv": 1.0783990762714295e-15
  },
@@ -20,6 +22,7 @@
   "join_lines": 16,
   "graph_lines": 32,
   "rank": 20,
+  "rank_exact_Q": 20,
   "smallest_nonzero_sv": 3.999999999999999,
   "largest_zero_sv": 2.1126799254765555e-15
  },
@@ -28,6 +31,7 @@
   "join_lines": 16,
   "graph_lines": 48,
   "rank": 20,
+  "rank_exact_Q": 20,
   "smallest_nonzero_sv": 5.999999999999998,
   "largest_zero_sv": 2.553313154472229e-15
  }

@@ -5,8 +5,10 @@
 #   Fermat quartic in split form (u^4+v^4 - (z^4+w^4)) (predicted 20; 48 lines known to span NS)
 # Lines: join lines {u = a v, z = b w} (a root of F0, b root of F1); graph lines {(u,v) = A(z,w)} with F0 o A = F1.
 # Intersection numbers on a K3: L.L = -2, L.L' = 1 if the lines meet, else 0; H.L = 1, H.H = 4.
+# The rank of the integer Gram matrix is computed numerically and exactly over Q (python-flint).
 import itertools, json
 import numpy as np
+import flint
 import mpmath as mp
 mp.mp.dps = 40
 
@@ -105,8 +107,9 @@ def gram_rank(F0, F1, label):
         for j in range(n):
             G[i + 1, j + 1] = -2 if i == j else (1 if meet(lines[i], lines[j]) else 0)
     rk = np.linalg.matrix_rank(G)
+    rk_q = int(flint.fmpz_mat([[int(round(x)) for x in row] for row in G]).rank())
     sv = np.linalg.svd(G, compute_uv=False)
-    return dict(label=label, join_lines=njoin, graph_lines=n - njoin, rank=int(rk),
+    return dict(label=label, join_lines=njoin, graph_lines=n - njoin, rank=int(rk), rank_exact_Q=rk_q,
                 smallest_nonzero_sv=float(min(s for s in sv if s > 1e-8)), largest_zero_sv=float(max([s for s in sv if s <= 1e-8] + [0])))
 
 if __name__ == '__main__':
@@ -120,8 +123,8 @@ if __name__ == '__main__':
     out.append(gram_rank(Ff, Ff, 'Fermat u^4+v^4 = z^4+w^4: predicted rho = 20'))
     Fj = [0, 1, 0, 0, 1]  # u^4 + u v^3 (j = 0)
     out.append(gram_rank(Fj, Fj, 'P=Q with j=0 (u^4+uv^3): predicted rho = 20'))
-    lines = ['%s\n   join lines %d, graph lines %d, rank<H,lines> = %d (sv gap %.2e / %.2e)' %
-             (r['label'], r['join_lines'], r['graph_lines'], r['rank'], r['smallest_nonzero_sv'], r['largest_zero_sv']) for r in out]
+    lines = ['%s\n   join lines %d, graph lines %d, rank<H,lines> = %d (exact over Q: %d; sv gap %.2e / %.2e)' %
+             (r['label'], r['join_lines'], r['graph_lines'], r['rank'], r['rank_exact_Q'], r['smallest_nonzero_sv'], r['largest_zero_sv']) for r in out]
     open('lines_check.out', 'w').write('\n'.join(lines) + '\n')
     json.dump(out, open('lines_check.json', 'w'), indent=1)
     print('\n'.join(lines))

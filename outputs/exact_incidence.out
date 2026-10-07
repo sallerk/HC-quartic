@@ -1,0 +1,7 @@
+lines on S: 32 distinct linear spaces; pairs by dimension of the linear intersection {0: 336, 1: 160}
+   exact pattern vs floating-point ranks of the spans: 0 disagreements (smallest singular value that must be non-zero 9.93e-02, largest that must be zero 1.62e-16)
+   rank of the Gram matrix of h and these classes, exactly over Q: 19
+planes on X(F,F,F): 256 distinct linear spaces; pairs by dimension of the linear intersection {0: 19584, 1: 11136, 2: 1920}
+   exact pattern vs floating-point ranks of the spans: 0 disagreements (smallest singular value that must be non-zero 6.62e-02, largest that must be zero 3.40e-16)
+   rank of the Gram matrix of h and these classes, exactly over Q: 109
+permutations of the roots: F o A = F: [(0, 1, 2, 3), (1, 0, 3, 2), (2, 3, 0, 1), (3, 2, 1, 0)]; F o A = -F: [(0, 1, 2, 3), (1, 0, 3, 2), (2, 3, 0, 1), (3, 2, 1, 0)]

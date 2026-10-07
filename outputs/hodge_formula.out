@@ -1,0 +1,20 @@
+Proposition 6.1 vs the Delsarte counts of hodge_count.py (F = u^4+v^4, J = u^4+uv^3)
+   FF    m=1  formula    20  Delsarte    20  h^{m,m}_prim    19  dim H_prim    21  agree
+   FJ    m=1  formula    18  Delsarte    18  h^{m,m}_prim    19  dim H_prim    21  agree
+   JJ    m=1  formula    20  Delsarte    20  h^{m,m}_prim    19  dim H_prim    21  agree
+   FFF   m=2  formula   142  Delsarte   142  h^{m,m}_prim   141  dim H_prim   183  agree
+   FFJ   m=2  formula   122  Delsarte   122  h^{m,m}_prim   141  dim H_prim   183  agree
+   FJJ   m=2  formula   114  Delsarte   114  h^{m,m}_prim   141  dim H_prim   183  agree
+   JJJ   m=2  formula   118  Delsarte   118  h^{m,m}_prim   141  dim H_prim   183  agree
+   FFFF  m=3  formula  1108  Delsarte  1108  h^{m,m}_prim  1107  dim H_prim  1641  agree
+   FFFJ  m=3  formula   928  Delsarte   928  h^{m,m}_prim  1107  dim H_prim  1641  agree
+   FFJJ  m=3  formula   826  Delsarte   826  h^{m,m}_prim  1107  dim H_prim  1641  agree
+   FJJJ  m=3  formula   784  Delsarte   784  h^{m,m}_prim  1107  dim H_prim  1641  agree
+   JJJJ  m=3  formula   820  Delsarte   820  h^{m,m}_prim  1107  dim H_prim  1641  agree
+Blocks without CM (G = u^4+(7/3)u^2v^2+v^4; H another curve without CM, not isogenous to E_G)
+   GG    formula    19  h^{m,m}_prim    19
+   GH    formula    18  h^{m,m}_prim    19
+   GGG   formula   109  h^{m,m}_prim   141
+   GGH   formula   103  h^{m,m}_prim   141
+   GGGG  formula   714  h^{m,m}_prim  1107
+ALL TWELVE AGREE

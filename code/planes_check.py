@@ -17,13 +17,15 @@
 #     the other 48 live in sectors (0,1,3),(0,3,1),(1,0,3),(3,0,1) and need non-line curves on S_02, S_12).
 #   Fermat u^4+v^4 (x3): 1 + 27 + 3*(24 + 6) = 118 (model 142; the remaining 24 sit in zero-free sectors
 #     (1,1,2),(3,3,2) and perms, reached only by the non-split Fermat planes, not used here).
-# Rank is computed (i) numerically (SVD gap) and (ii) exactly mod two large primes (a lower bound for rank over Q).
+# Rank is computed (i) numerically (SVD gap), (ii) exactly mod two large primes (a lower bound for rank over Q) and
+# (iii) exactly over Q (python-flint).  The predicted values are proved in the note (Proposition 6.1, Corollary 6.2).
 import os
 for _v in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS'):
     os.environ[_v] = '1'
 import itertools, json, sys
 import numpy as np
 import mpmath as mp
+import flint
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # find lines_check.py next to this file
 from lines_check import roots_binary, graph_matrices
 
@@ -110,7 +112,8 @@ def run(Fs, label, predicted):
     rank = int((sv > 1e-6 * sv.max()).sum())
     gap = (float(min(s for s in sv if s > 1e-6 * sv.max())), float(max([s for s in sv if s <= 1e-6 * sv.max()] + [0])))
     rp = [rank_mod_p(G, p) for p in (1000003, 998244353)]
-    return dict(label=label, planes=n, planes_a=na, rank=rank, rank_mod_p=rp, predicted=predicted, sv_gap=gap)
+    rq = int(flint.fmpz_mat([[int(round(x)) for x in row] for row in G]).rank())
+    return dict(label=label, planes=n, planes_a=na, rank=rank, rank_mod_p=rp, rank_exact_Q=rq, predicted=predicted, sv_gap=gap)
 
 if __name__ == '__main__':
     Fg = [1, 0, mp.mpf(7) / 3, 0, 1]
@@ -120,8 +123,8 @@ if __name__ == '__main__':
     res.append(run([Fg, Fg, Fg], 'F0=F1=F2 generic non-CM (model Hdg = 109; all Hodge sectors contain a 0)', 109))
     res.append(run([Fg, Fg, F1], 'F0=F1 generic, F2 unrelated (model Hdg = 103; planes reach only sectors with a 0 via pair (0,1))', 55))
     res.append(run([Ff, Ff, Ff], 'Fermat split form, CONTROL (model Hdg = 142; (a)+(b) planes reach only sectors with a 0)', 118))
-    lines = ['%s\n   planes %d (point-joins %d), rank<h^2, planes> = %d (exact mod p: %s), predicted %s, sv gap %.2e / %.2e'
-             % (r['label'], r['planes'], r['planes_a'], r['rank'], r['rank_mod_p'], r['predicted'], r['sv_gap'][0], r['sv_gap'][1]) for r in res]
+    lines = ['%s\n   planes %d (point-joins %d), rank<h^2, planes> = %d (exact mod p: %s; exact over Q: %d), predicted %s, sv gap %.2e / %.2e'
+             % (r['label'], r['planes'], r['planes_a'], r['rank'], r['rank_mod_p'], r['rank_exact_Q'], r['predicted'], r['sv_gap'][0], r['sv_gap'][1]) for r in res]
     open('planes_check.out', 'w').write('\n'.join(lines) + '\n')
     json.dump(res, open('planes_check.json', 'w'), indent=1)
     print('\n'.join(lines))
